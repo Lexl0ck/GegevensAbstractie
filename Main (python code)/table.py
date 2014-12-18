@@ -31,17 +31,14 @@ class Table:
             self.pointer = TwoThreeTree()
 
     def destroyTable(self):
-        if self.implementation == "binaryTree":
-            self.pointer.clear()
-        elif self.implementation == "doublylinkedchain":
+        if (self.implementation == "binaryTree" or
+           self.implementation == "doublylinkedchain"):
             self.pointer.clear()
         elif self.implementation == "hashmap":
             self.pointer.destroy()
-        elif self.implementation == "redBlackTree":
-            self.pointer.destroyTree()
-        elif self.implementation == "234Tree":
-            self.pointer.destroyTree()
-        elif self.implementation == "23Tree":
+        elif (self.implementation == "redBlackTree" or
+              self.implementation == "234Tree" or
+              self.implementation == "23Tree"):
             self.pointer.destroyTree()
 
     def tableIsEmpty(self):

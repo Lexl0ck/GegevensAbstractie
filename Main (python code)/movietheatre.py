@@ -31,6 +31,7 @@ class Movietheatre:
         self.screens = []
         self.slots = []
         self.dates = []
+        self.users = []
 
         s1 = self.addScreen(0, 200)
         s2 = self.addScreen(1, 150)
@@ -119,3 +120,9 @@ class Movietheatre:
 
     def removeFilm(self, filmID):
        return film_table.tableDelete(filmID)
+
+    def listUsers(self):
+       return users
+
+    def listReservations(self)
+       return film_table.traverseTable()
