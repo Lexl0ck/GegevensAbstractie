@@ -1,4 +1,4 @@
-class doubly_linked_chain:
+class Doubly_linked_chain:
     ''' A chain of containers linked together by pointers without order. '''
 
         

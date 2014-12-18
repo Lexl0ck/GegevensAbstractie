@@ -2,11 +2,11 @@ from showing import *
 from screen import *
 from film import *
 from reservation import *
+from slot import *
 
 from table import *
 from queue import *
-from datetime import time
-from datetime import date
+from datetime import *
 
 class Movietheatre:
 
@@ -35,10 +35,10 @@ class Movietheatre:
         s1 = self.addScreen(0, 200)
         s2 = self.addScreen(1, 150)
  
-        sl1 = self.addSlot(0, datetime.time(14,30))  # 14:30
-        sl2 = self.addSlot(1, datetime.time(17))  # 17:00
-        sl3 = self.addSlot(2, datetime.time(20))  # 20:00
-        sl4 = self.addSlot(3, datetime.time(21,30)) # 22:30   
+        sl1 = self.addSlot(0, time(14,30))  # 14:30
+        sl2 = self.addSlot(1, time(17))  # 17:00
+        sl3 = self.addSlot(2, time(20))  # 20:00
+        sl4 = self.addSlot(3, time(21,30)) # 22:30   
 
 
         f1 = self.addFilm(0, "Bloody Mary", 6.75)
@@ -47,41 +47,44 @@ class Movietheatre:
         f3 = self.addFilm(3, "Shining", 4.52)
         f4 = self.addFilm(4, "V for vendetta", 9.85)
 
-        showing1 = self.addShowing(0, self.screens[0].getID(), 
-        self.slots[2], datetime.date(2014,12,25), f2.getID(), self.screens[0].getSeats())
+        self.addShowing(0, self.screens[0].getScreenNumber(), 
+        self.slots[2], date(2014,12,25), f2.getID(), self.screens[0].getSeats())
 
-        showing2 = self.addShowing(1, self.screens[1].getID(), 
-        self.slots[3], datetime.date(2014,12,25), f1.getID(), self.screens[1].getSeats())
+        self.addShowing(1, self.screens[1].getScreenNumber(), 
+        self.slots[3], date(2014,12,25), f1.getID(), self.screens[1].getSeats())
 
-        showing3 = self.addShowing(2, self.screens[1].getID(), 
-        self.slots[3],datetime.date(2014,12,26), f4.getID(), self.screens[1].getSeats())
+        self.addShowing(2, self.screens[1].getScreenNumber(), 
+        self.slots[3], date(2014,12,26), f4.getID(), self.screens[1].getSeats())
 
     def addScreen(self, screennumber, seats):
         screen = Screen()
         screen.setScreenNumber(screennumber)
         screen.setSeats(seats)
         self.screens.append(screen)
+        return screen
 
     def addSlot(self, slotID, time):
         slot = Slot()
         slot.setID(slotID)
         slot.setTime(time)
         self.slots.append(slot)
+        return slot
           
-    def addFilm(self, filmdID, title, rating):
+    def addFilm(self, filmID, title, rating):
         film = Film()
         film.setID(filmID)
         film.setTitle(title)
         film.setRating(rating)
         self.film_table.tableInsert(film)
+        return film
 
     def addShowing(self, showID, screenID, timeSlot, date, filmID, freeseats):
         showing = Showing()
         showing.setID(showID)
         showing.setScreenID(screenID)
-        showing.setTimeSlot(filmdID)
+        showing.setTimeSlot(timeSlot)
         showing.setDate(date)
-        showing.setFilmID(filmdID)
+        showing.setFilmID(filmID)
         showing.setFreeSeats(freeseats)
         self.showing_table.tableInsert(showing)
 

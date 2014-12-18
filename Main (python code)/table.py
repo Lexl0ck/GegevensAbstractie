@@ -19,7 +19,7 @@ class Table:
     def createTable(self):
         if self.implementation == "binaryTree":
             self.pointer = BinTree()
-        elif self.implementation == "doublyLinkedChain":
+        elif self.implementation == "doublylinkedchain":
             self.pointer = Doubly_linked_chain()
         elif self.implementation == "hashmap":
             self.pointer = Hashmap()
@@ -33,7 +33,7 @@ class Table:
     def destroyTable(self):
         if self.implementation == "binaryTree":
             self.pointer.clear()
-        elif self.implementation == "doublyLinkedChain":
+        elif self.implementation == "doublylinkedchain":
             self.pointer.clear()
         elif self.implementation == "hashmap":
             self.pointer.destroy()
@@ -50,7 +50,7 @@ class Table:
     def tableLength(self):
         if self.implementation == "binaryTree":
             return len(self.pointer.inorder())
-        elif self.implementation == "doublyLinkedChain":
+        elif self.implementation == "doublylinkedchain":
             return self.pointer.getLength()
         elif self.implementation == "hashmap":
             return self.pointer.getLength()
@@ -61,8 +61,8 @@ class Table:
         elif self.implementation == "23Tree":
             return self.pointer.treeLength()
 
-    def tableInsert(newItem):
-        if (self.implementation == "doublyLinkedChain" or
+    def tableInsert(self, newItem):
+        if (self.implementation == "doublylinkedchain" or
             self.implementation == "hashmap"):
             return self.pointer.insert(None, newItem)
         return self.pointer.insert(newItem)
@@ -70,7 +70,7 @@ class Table:
     def tableDelete(self, searchKey):
         if self.implementation == "binaryTree":
             return self.pointer.remove(searchKey)
-        elif self.implementation == "doublyLinkedChain":
+        elif self.implementation == "doublylinkedchain":
             return self.pointer.remove(searchKey)
         elif self.implementation == "hashmap":
             return self.pointer.remove(searchKey)
@@ -84,7 +84,7 @@ class Table:
     def tableRetrieve(self, searchKey):
         if self.implementation == "binaryTree":
             return self.pointer.getData(searchKey)
-        elif self.implementation == "doublyLinkedChain":
+        elif self.implementation == "doublylinkedchain":
             return self.pointer.getItem(searchKey)
         elif self.implementation == "hashmap":
             return self.pointer.getItem(searchKey)
@@ -98,7 +98,7 @@ class Table:
     def traverseTable(self):
         if self.implementation == "binaryTree":
             return self.pointer.inorder()
-        elif self.implementation == "doublyLinkedChain":
+        elif self.implementation == "doublylinkedchain":
             return self.pointer.getTraverse()
         elif self.implementation == "hashmap":
             return self.pointer.traverse()

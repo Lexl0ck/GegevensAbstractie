@@ -7,7 +7,7 @@ class Slot:
     def setID(self, ID):
         self.ID = ID
 
-    def setTime(self, time)
+    def setTime(self, time):
         self.time = time
 
     def getID(self):

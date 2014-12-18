@@ -1,5 +1,6 @@
 from stack import *
 from ticket import *
+from datetime import *
 
 class Showing:
 
@@ -12,7 +13,7 @@ class Showing:
         self.freeseats = 0
         self.tickets = Stack()
         self.tickets.createStack()
-        self.empty_ts = datetime.datetime.now()
+        self.empty_ts = datetime.now()
 
     def setID(self, ID):
         self.ID = ID
