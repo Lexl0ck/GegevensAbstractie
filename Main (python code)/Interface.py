@@ -19,6 +19,7 @@ def create_reservation():
     userID = int(input("Please enter your user ID: "))
     showingID = int(input("Please enter a showing ID: "))
     amount = int(input("How many tickets would you like? "))
+    reservationID = len(theatre.listReservations())
     if theatre.makeReservation(reservationID, userID, showingID, amount):
         print("reservation made. press any key to return")
     else:
@@ -31,6 +32,7 @@ def create_user():
     firstname = input("Please enter your first name: ")
     lastname = input("Please enter your last name: ")
     email = input("Please enter your e-mail: ")
+    userID = len(theatre.listUsers())
     if theatre.makeReservation(userID, firstname, lastname, email):
         print("Reservation made. press any key to return")
     else:
@@ -42,6 +44,7 @@ def create_film():
     print("** adding a new film ***********")
     title = input("Please enter the title: ")
     rating = input("Please enter a rating: ")
+    filmID = len(theatre.listFilms())
     if theatre.addFilm(filmID, title, rating):
         print("Film Added. press any key to return")
     else:
@@ -55,7 +58,8 @@ def create_showing():
     timeslot = input("Please choose the timeslot: ")
     date = input("Please enter the date: ")
     filmID = input("Please enter the filmID: ")
-    if theatre.addShowing(screenID, timeslot, date, filmID):
+    showingID = len(theatre.listShowings())
+    if theatre.addShowing(showingID, screenID, timeslot, date, filmID):
         print("Showing added. press any key to return")
     else:
         print("Couldn't add showing. press any key to return")
