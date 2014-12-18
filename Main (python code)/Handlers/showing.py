@@ -50,7 +50,7 @@ class Showing:
         return self.freeseats
 
     def reserve(self, ticket_am):
-        for i in range(ticket_am)
+        for i in range(ticket_am):
             ticket = Ticket()
             if not self.tickets.push(ticket):
                 return False
@@ -64,13 +64,8 @@ class Showing:
         
 
     def __str__(self):
-        return ("The variables of Showing: 
-                 \n ID: "+str(self.getID())+
-                "\n ScreenID: "+str(self.getScreenID())+
-                "\n TimeSlot: "+str(self.getTimeSlot())+
-                "\n Date: "+str(self.getDate())+
-                "\n FilmID: "+str(self.getFilmID())+
-                "\n FreeSeats: "+str(self.getFreeSeats()))
+        return ("The variables of Showing: \n ID: "+str(self.getID())+"\n ScreenID: "+str(self.getScreenID())+ "\n TimeSlot: "+str(self.getTimeSlot())+ "\n Date: "+str(self.getDate())+
+                "\n FilmID: "+str(self.getFilmID())+ "\n FreeSeats: "+str(self.getFreeSeats()))
 
 
  
