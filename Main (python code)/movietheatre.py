@@ -3,6 +3,7 @@ from screen import *
 from film import *
 from reservation import *
 from slot import *
+fron user import *
 
 from table import *
 from queue import *
@@ -70,6 +71,14 @@ class Movietheatre:
         slot.setTime(time)
         self.slots.append(slot)
         return slot
+
+    def addUser(self, userID, firstname, lastname, email):
+        user = User()
+        user.setID(userID)
+        user.setFirstName(firstname)
+        user.setLastName(lastname)
+        user.setEmail(email)
+        users.append(user)
           
     def addFilm(self, filmID, title, rating):
         film = Film()
