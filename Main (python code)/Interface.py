@@ -16,9 +16,9 @@ else:
 def create_reservation():
     ''' Asks for input and creates a reservation '''
     print("** making reservation ***********")
-    userID = input("Please enter your user ID: ")
-    showingID = input("Please enter a showing ID: ")
-    amount = input("How many tickets would you like? ")
+    userID = int(input("Please enter your user ID: "))
+    showingID = int(input("Please enter a showing ID: "))
+    amount = int(input("How many tickets would you like? "))
     if theatre.makeReservation(reservationID, userID, showingID, amount):
         print("reservation made. press any key to return")
     else:
