@@ -127,6 +127,14 @@ class Tree234:
                 tmpheight = max(tmpheight, height(child) + 1)
             return tmpheight
         return height(self.node)
+
+    def getLength(self):
+        list = self.traverse()
+        length = len(self.traverse())
+        if length == 1 and list[0].items = [None, None, None]:
+            return 0
+        return length
+
        
     def insert(self, item):
         ''' Insert an item in the tree at the appropriate place '''

@@ -1,10 +1,3 @@
-class treeItem:
-   def __init__(self, value=None):
-       self.value = value
-
-   def getValue(self):
-       return self.value
-
 class Node:
 
     def __init__(self, tree, vals=[None, None, None], p=None, links=[None, None, None, None]):
@@ -51,30 +44,23 @@ class Node:
                 if not v == None:
                     a.append(v)
         elif self.getSize() == 2:
-            for v in self.links[0].inorder():
-                a.append(v)
+            a.extend(self.links[0].inorder())
             a.append(self.vals[0])   
-            for v in self.links[2].inorder():
-                a.append(v)
+            a.extend(self.links[2].inorder())
             a.append(self.vals[2])  
-            for v in self.links[3].inorder():
-                a.append(v)
+            a.extend(self.links[3].inorder())
         else:
-            for v in self.links[0].inorder():
-                a.append(v)
+            a.extend(self.links[0].inorder())
             a.append(self.vals[1])  
-            for v in self.links[3].inorder():
-                a.append(v)
+            a.extend(self.links[3].inorder())
         return a
 
-    def retrieveItem(self, searchKey, treeItem):
+    def retrieveItem(self, searchKey):
         for v in self.vals:
             if v == searchKey:
-                treeItem.value = v
-                return True
+                return v
         if self.links[0] == None:
-            treeItem.value = None
-            return False
+            return None
         if self.getSize() == 2:
             if searchKey < self.vals[0]:
                 return self.links[0].retrieveItem(searchKey, treeItem)
@@ -438,8 +424,8 @@ class TwoThreeTree:
     def deleteItem(self, searchKey):
         self.root.deleteItem(searchKey)
 
-    def retrieveItem(self, searchKey, treeItem):
-        return self.root.retrieveItem(searchKey, treeItem)
+    def retrieveItem(self, searchKey):
+        return self.root.retrieveItem(searchKey)
 
     def traverse(self):
         return self.root.inorder()

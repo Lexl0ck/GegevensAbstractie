@@ -37,28 +37,34 @@ class redblacknode:
         return self.leftchild
     
     def preOrderTraversal(self, node=None):    #traverses and prints the tree in preorder
+        ret_list = []
         if None != node.key and node != None:
-            print(node)
+            ret_list.append(node)
         if node.leftchild != None:
-            node.leftchild.postOrderTraversal(node.leftchild)
+            ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
         if node.rightchild != None:
-            node.rightchild.postOrderTraversal(node.rightchild)
+            ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
+        return ret_list
 
     def postOrderTraversal(self, node=None):    #traverses and prints the tree in postorder
+        ret_list = []
         if node.leftchild != None:
-            node.leftchild.postOrderTraversal(node.leftchild)
+            ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
         if node.rightchild != None:
-            node.rightchild.postOrderTraversal(node.rightchild)
+            ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
         if None != node.key and node != None:
-            print(node)
+            ret_list.append(node)
+        return ret_list
     
     def inOrderTraversal(self, node=None):    #traverses and prints the tree in inorder
+        ret_list = []
         if node.leftchild != None:
-            node.leftchild.postOrderTraversal(node.leftchild)
+            ret_list.extend(node.leftchild.inOrderTraversal(node.leftchild))
         if None != node.key and node != None:
-            print(node)
+            ret_list.append(node)
         if node.rightchild != None:
-            node.rightchild.postOrderTraversal(node.rightchild)
+            ret_list.extend(node.rightchild.inOrderTraversal(node.rightchild))
+        return ret_list
 
 class Redblacktree:            
     '''
@@ -219,31 +225,48 @@ class Redblacktree:
 
     def destroyTree(self):            #destroys the tree
         del(self)
+
+    def getLength(self):
+        list = self.inOrderTraversal()
+        length = len(list)
+        if length == 1 and list[0].key == None:
+            return 0
+        return length
+
+    def isEmpty(self):
+        if self.getLength() == 0:
+            return True
+        return False
     
     def preOrderTraversal(self, node=None):    #traverses and prints the tree in preorder
+        ret_list = []
         if None == node:
             node = self.root
-        print(node)
+        ret_list.append(node)
         if node.leftchild != None:
-            node.leftchild.preOrderTraversal(node.leftchild)
+            ret_list.extend(node.leftchild.preOrderTraversal(node.leftchild))
         if node.rightchild != None:
-            node.rightchild.preOrderTraversal(node.rightchild)
+            ret_list.extend(node.rightchild.preOrderTraversal(node.rightchild))
+        return ret_list
 
     def postOrderTraversal(self, node=None):    #traverses and prints the tree in postorder
+        ret_list = []
         if None == node:
             node = self.root
         if node.leftchild != None:
-            node.leftchild.postOrderTraversal(node.leftchild)
+            ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
         if node.rightchild != None:
-            node.rightchild.postOrderTraversal(node.rightchild)
-        print(node)
+            ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
+        ret_list.append(node)
+        return ret_list
     
     def inOrderTraversal(self, node=None):    #traverses and prints the tree in inorder
-        
+        ret_list = []
         if None == node:
             node = self.root
         if node.leftchild != None:
-            node.leftchild.inOrderTraversal(node.leftchild)
-        print(node)
+            ret_list.extend(node.leftchild.inOrderTraversal(node.leftchild))
+        ret_list.append(node)
         if node.rightchild != None:
-            node.rightchild.inOrderTraversal(node.rightchild)
+            ret_list.extend(node.rightchild.inOrderTraversal(node.rightchild))
+        return ret_list

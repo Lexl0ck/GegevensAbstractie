@@ -44,32 +44,21 @@ class Table:
             self.pointer.destroyTree()
 
     def tableIsEmpty(self):
-        if self.implementation = "binaryTree":
-            self.pointer.isEmpty()
-        elif self.implementation = "doublyLinkedChain":
-            self.pointer.isEmpty()
-        elif self.implementation = "hashmap":
-            return self.pointer.isEmpty()
-        elif self.implementation = "redBlackTree":
-            return self.pointer.
-        elif self.implementation = "234Tree":
-            self.pointer.
-        elif self.implementation = "23Tree":
-            self.pointer.
+        return self.pointer.isEmpty()  
 
     def tableLength(self):
         if self.implementation = "binaryTree":
-            return len(self.pointer.inorder)
+            return len(self.pointer.inorder())
         elif self.implementation = "doublyLinkedChain":
-            return len(self.traverseTable())
+            return self.pointer.getLength()
         elif self.implementation = "hashmap":
             return self.pointer.getLength()
         elif self.implementation = "redBlackTree":
-            return self.pointer.
+            return self.pointer.getLength()
         elif self.implementation = "234Tree":
-            self.pointer.
+            return self.pointer.getLength()
         elif self.implementation = "23Tree":
-            self.pointer.
+            return self.pointer.treeLength()
 
     def tableInsert(newItem):
         if (self.implementation = "doublyLinkedChain" or
@@ -85,11 +74,11 @@ class Table:
         elif self.implementation = "hashmap":
             return self.pointer.remove(searchKey)
         elif self.implementation = "redBlackTree":
-            return self.pointer.
+            return self.pointer.delete(searchKey)
         elif self.implementation = "234Tree":
-            self.pointer.
+            return self.pointer.delete(searchKey)
         elif self.implementation = "23Tree":
-            self.pointer.
+            return self.pointer.deleteItem(searchKey)
 
     def tableRetrieve(self, searchKey):
         if self.implementation = "binaryTree":
@@ -99,11 +88,11 @@ class Table:
         elif self.implementation = "hashmap":
             return self.pointer.getItem(searchKey)
         elif self.implementation = "redBlackTree":
-            return self.pointer.
+            return self.pointer.search(searchKey)
         elif self.implementation = "234Tree":
-            self.pointer.
+            self.pointer.retrieve(searchKey)
         elif self.implementation = "23Tree":
-            self.pointer.
+            self.pointer.retrieveItem(searchKey)
 
     def traverseTable(self):
         if self.implementation = "binaryTree":
@@ -113,10 +102,10 @@ class Table:
         elif self.implementation = "hashmap":
             return self.pointer.traverse()
         elif self.implementation = "redBlackTree":
-            return self.pointer.
+            return self.pointer.inOrderTraversal()
         elif self.implementation = "234Tree":
-            self.pointer.
+            return self.pointer.traverse()
         elif self.implementation = "23Tree":
-            self.pointer.
+            return self.pointer.traverse()
 
 
