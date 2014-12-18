@@ -1,4 +1,4 @@
-class Doubly_linked_chain:
+class doubly_linked_chain:
     ''' A chain of containers linked together by pointers without order. '''
 
         
@@ -91,8 +91,27 @@ class Doubly_linked_chain:
                 return node
         return self.traverse(compare)
 
+    def getItem(self, searchKey):
+        ''' Returns the first item found with the given searchkey. '''
+        node = self.getNode(searchKey)
+        if node:
+            return node.item
+        else:
+            return False
+
     def isEmpty(self):
         ''' Returns True if the chain is empty or false if not. '''
         if self.tailPtr is None:
             return True
         return False
+
+    def getTraverse(self):
+        ''' returns a list of all the items in the chain '''
+        tmpList = []
+        tmpNode = self.headPtr
+        tmpNode = tmpNode.next #skip the dummy head node
+        while tmpNode != None:
+            tmpList.append(tmpNode.item)
+            tmpNode = tmpNode.next
+        return tmpList
+
