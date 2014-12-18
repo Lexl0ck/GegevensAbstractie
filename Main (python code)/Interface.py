@@ -1,22 +1,32 @@
 import os
-
 from movietheatre import * 
 
 theatre = Movietheatre()
 
+# defining function clear to clear the screen.
+# call "clear" on linux, "cls" on windows.
+if os.name == "nt":
+    def clear():
+        os.system("cls")
+else:
+    def clear():
+        os.system("clear")
+        
 
 def create_reservation():
+    ''' Asks for input and creates a reservation '''
     print("** making reservation ***********")
     userID = input("Please enter your user ID: ")
     showingID = input("Please enter a showing ID: ")
     amount = input("How many tickets would you like? ")
-    if theatre.addUser(reservationID, userID, showingID):
+    if theatre.makeReservation(reservationID, userID, showingID, amount):
         print("reservation made. press any key to return")
     else:
         print("reservation failed. press any key to return")
     input("")
 
 def create_user():
+    ''' Asks for input and creates a user '''
     print("** creating user ***********")
     firstname = input("Please enter your first name: ")
     lastname = input("Please enter your last name: ")
@@ -28,6 +38,7 @@ def create_user():
     input("")
 
 def create_film():
+    ''' Asks for input and creates a film '''
     print("** adding a new film ***********")
     title = input("Please enter the title: ")
     rating = input("Please enter a rating: ")
@@ -38,6 +49,7 @@ def create_film():
     input("")
 
 def create_showing():
+    ''' Asks for input and creates a showing '''
     print("** adding a new showing ***********")
     screenID = input("Please enter the screenID: ")
     timeslot = input("Please choose the timeslot: ")
@@ -49,10 +61,21 @@ def create_showing():
         print("Couldn't add showing. press any key to return")
     input("")
 
+def checkin():
+    ''' get a showing ID and check in viewers for that showing '''
+    print("** checking in ********************")
+    showingID = input("Please input the showing ID")
+    answer = "y"
+    print("Now checking in for showing with ID: ",showingID)
+    while answer == "y":
+        answer = input("type 'y' to check in a viewer, any other key
+                        to stop checking in")
+        theatre.checkin(showingID)
 
 def reservationmenu():
+    ''' shows reservation menu, executes chozen input '''
     while True:
-        os.system('clear')
+        clear()
         print("== RESERVATION MENU ==\n")
         print("Make your choice:\n")
         print(" 0. Return to main menu")
@@ -67,8 +90,9 @@ def reservationmenu():
             create_reservation()
 
 def filmsmenu():
+    ''' shows films menu, executes chozen input '''
     while True:
-        os.system('clear')
+        clear()
         print("== FILMS MENU ==\n")
         print("Make your choice:\n")
         print(" 0. Return to main menu")
@@ -84,13 +108,15 @@ def filmsmenu():
             input("Press any key to continue")
 
 def showingsmenu():
+    ''' prints showing menu, executes chozen input '''
     while True:
-        os.system('clear')
+        clear()
         print("== SHOWINGS MENU ==\n")
         print("Make your choice:\n")
         print(" 0. Return to main menu")
         print(" 1. Add a showing")
         print(" 2. List showings")
+        print(" 3. check in viewers for a showing")
         choice = input("\n> ")
         if int(choice) == 0: return True
         elif int(choice) == 1:
@@ -99,11 +125,14 @@ def showingsmenu():
             for showing in theatre.listShowings():
                 print(showing)
             input("Press any key to continue")
+        elif int(choice) == 3:
+            checkin()
 
 
 def mainmenu():
+    ''' prints the main menu and calls submenus '''
     while True:
-        os.system('clear')
+        clear()
         print("== MAIN MENU ==\n")
         print("Make your choice:\n")
         print(" 1. Make reservation")
@@ -119,7 +148,8 @@ def mainmenu():
             filmsmenu()
         elif int(choice) == 4:
             return 0
+        
+
 
 # Call our main menu to get the ball rolling
 mainmenu()
-       
