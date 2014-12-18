@@ -12,6 +12,7 @@ class Showing:
         self.freeseats = 0
         self.tickets = Stack()
         self.tickets.createStack()
+        self.empty_ts = datetime.datetime.now()
 
     def setID(self, ID):
         self.ID = ID
@@ -49,6 +50,16 @@ class Showing:
     def getFreeSeats(self):
         return self.freeseats
 
+    def isStarted(self):
+        if not self.date == None and not self.time == None:
+            dt = datetime.datetime.combine(self.date, timeSlot.getTime)
+            if dt <= datetime.datetime.now():
+                if empty_ts > dt:
+                    return empty_ts
+                return dt
+            return -1
+            
+
     def reserve(self, ticket_am):
         if not self.date == None and not self.time == None:
             dt = datetime.datetime.combine(self.date, timeSlot.getTime)
@@ -66,6 +77,8 @@ class Showing:
             dt = datetime.datetime.combine(self.date, timeSlot.getTime)
             if dt < datetime.datetime.now() :
                 if self.tickets.pop():
+                    if self.tickets.isEmpty():
+                        self.empty_ts = datetime.datetime.now()
                     return True
         return False
         
