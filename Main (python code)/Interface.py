@@ -33,10 +33,9 @@ def create_user():
     lastname = input("Please enter your last name: ")
     email = input("Please enter your e-mail: ")
     userID = len(theatre.listUsers())
-    if theatre.addUser(userID, firstname, lastname, email):
-        print("Reservation made. press any key to return")
-    else:
-        print("Reservation failed. press any key to return")
+    theatre.addUser(userID, firstname, lastname, email)
+    print("User created. Your userID is "+str(userID))
+    print("Press any key to return")
     input("")
 
 def create_film():
