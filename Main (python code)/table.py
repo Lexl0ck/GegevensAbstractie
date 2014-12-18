@@ -13,12 +13,12 @@ class Table:
         self.implementation = "binaryTree"
         self.pointer = None
         
-    def setImplementation(implementation):
+    def setImplementation(self, implementation):
         self.implementation = implementation
 
     def createTable(self):
         if self.implementation == "binaryTree":
-            self.pointer = binaryTree()
+            self.pointer = BinTree()
         elif self.implementation == "doublyLinkedChain":
             self.pointer = Doubly_linked_chain()
         elif self.implementation == "hashmap":

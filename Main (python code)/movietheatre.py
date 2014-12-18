@@ -21,7 +21,7 @@ class Movietheatre:
         self.showing_table.createTable()
 
         self.film_table = Table()
-        self.film_talbe.createTable()
+        self.film_table.createTable()
 
         self.reservation_table = Table()
         self.reservation_table.createTable()
