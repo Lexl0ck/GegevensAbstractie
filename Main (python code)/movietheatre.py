@@ -17,7 +17,7 @@ class Movietheatre:
 
         # Tables (Showing and Film)
         self.showing_table = Table()
-        self.showing_table.setImplementation("DoubleLinkedChain")
+        self.showing_table.setImplementation("doublylinkedchain")
         self.showing_table.createTable()
 
         self.film_table = Table()
