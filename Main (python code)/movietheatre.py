@@ -17,7 +17,7 @@ class Movietheatre:
 
         # Tables (Showing and Film)
         self.showing_table = Table()
-        self.showing_table.setImplementation("DoubleLinkedChain"))
+        self.showing_table.setImplementation("DoubleLinkedChain")
         self.showing_table.createTable()
 
         self.film_table = Table()
@@ -36,9 +36,9 @@ class Movietheatre:
         s2 = self.addScreen(1, 150)
  
         sl1 = self.init_slot(0, datetime.time(14,30))  # 14:30
-        sl2 = self.init_slot(1, datetime.time(17)))  # 17:00
-        sl3 = self.init_slot(2, datetime.time(20)))  # 20:00
-        sl4 = self.init_slot(3, datetime.time(21,30))) # 22:30   
+        sl2 = self.init_slot(1, datetime.time(17))  # 17:00
+        sl3 = self.init_slot(2, datetime.time(20))  # 20:00
+        sl4 = self.init_slot(3, datetime.time(21,30)) # 22:30   
 
 
         f1 = self.addFilm(0, "Bloody Mary", 6.75)
@@ -85,7 +85,7 @@ class Movietheatre:
         showing.setFreeSeats(freeseats)
         self.showing_table.tableInsert(showing)
 
-   def makeReservation(self, reservationID, userID, showingID, amount):.
+    def makeReservation(self, reservationID, userID, showingID, amount):
         reservation = Reservation()
         reservation.setId(reservationID)
         reservation.setTimestamp(datetime.datetime.now())
@@ -99,20 +99,20 @@ class Movietheatre:
             return showing.reserve(amount)
         return False
 
-   def listShowings(self):
+    def listShowings(self):
        return self.showing_table.traverseTable()
    
-   def getShowing(self, showingID):
+    def getShowing(self, showingID):
        return showing_table.tableRetrieve(showingID)
 
-   def removeShowing(self, showingID):
+    def removeShowing(self, showingID):
        return showing_table.tableDelete(showingID)
 
-   def listFilms(self):
+    def listFilms(self):
        return film_table.traverseTable()
 
-   def getFilm(self, filmID)
+    def getFilm(self, filmID):
        return film_table.tableRetrieve(filmID)
 
-   def removeFilm(self, filmID):
+    def removeFilm(self, filmID):
        return film_table.tableDelete(filmID)
