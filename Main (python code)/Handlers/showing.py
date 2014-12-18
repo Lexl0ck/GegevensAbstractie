@@ -1,5 +1,5 @@
-from stack.py import *
-from ticket.py import *
+from .ADT.stack import *
+from .Containers.ticket import *
 
 class Showing:
 
