@@ -131,7 +131,7 @@ class Movietheatre:
        return film_table.tableDelete(filmID)
 
     def listUsers(self):
-       return users
+       return self.users
 
     def listReservations(self):
-       return film_table.traverseTable()
+       return self.film_table.traverseTable()
