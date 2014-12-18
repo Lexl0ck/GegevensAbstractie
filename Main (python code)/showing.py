@@ -50,16 +50,23 @@ class Showing:
         return self.freeseats
 
     def reserve(self, ticket_am):
-        for i in range(ticket_am):
-            ticket = Ticket()
-            if not self.tickets.push(ticket):
-                return False
-            self.freaseats -= 1
-        return True    
+        if not self.date == None and not self.time == None:
+            dt = datetime.datetime.combine(datetime.date(self.date, timeSlot.getTime)
+            if datetime.datetime.now() < dt:
+                for i in range(ticket_am):
+                    ticket = Ticket()
+                    if not self.tickets.push(ticket):
+                       return False
+                    self.freaseats -= 1
+                return True   
+        return False 
        
     def checkIn(self):
-        if self.tickets.pop():
-            return True
+        if not self.date == None and not self.time == None:
+            dt = datetime.datetime.combine(datetime.date(self.date, timeSlot.getTime)
+            if dt < datetime.datetime.now() 
+                if self.tickets.pop():
+                    return True
         return False
         
 
