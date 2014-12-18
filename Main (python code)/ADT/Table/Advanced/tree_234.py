@@ -1,103 +1,104 @@
-
-# Node class for the nodes of the tree.
-# items, children and parent can be passed in as arguments. The class will
-# NOT check whether the right amount was passed in, so be careful not to
-# create an invalid node!
-class Node:
-    ''' represents a node in a 234 tree '''
-    def __init__(self, i1 = None, i2 = None, i3 = None,
-                c1 = None, c2 = None, c3 = None, c4 = None, parent = None):
-        self.items = []
-        self.children = []
-        self.parent = parent
-        # loop through items and add them if present
-        for i in [i1, i2, i3]:
-            if i:
-                self.items.append(i)
-        # loop through items and add them if present
-        for c in [c1, c2, c3, c4]:
-            if c:
-                self.children.append(c)
-        self.items.sort() # Put items in order
-        self.children.sort() # Put children in order
-
-    def __lt__(self, node):
-        ''' Compare nodes -> compare first data item '''
-        if self.items[0] < node:
-            return True
-        return False
-
-    def __gt__(self, node):
-        ''' Compare nodes -> compare first data item '''
-        if self.items[0] > node:
-            return True
-        return False
-
-    def __eq__(self, node):
-        ''' Compare nodes -> compare first data item '''
-        if self.items[0] == node:
-            return True
-        return False
-
-    def contains(self, item):
-        ''' checks whether item is present in this node. returns boolean '''
-        for i in self.items:
-            if i == item:
-                return True
-        return False
-
-    def addi(self, item):
-        ''' add an item to the node '''
-        self.items.append(item)
-        self.items.sort()
-
-    def remi(self, item):
-        ''' remove an item from the node '''
-        self.items.remove(item)
-        self.items.sort()
-
-    def addc(self, child):
-        ''' add a child to the node '''
-        self.children.append(child)
-        child.setParent(self)
-        self.children.sort()
-
-    def remc(self, child):
-        ''' remove a child from the node '''
-        self.children.remove(child)
-        self.children.sort()
-
-    def setParent(self, parent):
-        ''' set the parent of the node '''
-        self.parent = parent
-
-    def isEmpty(self):
-        ''' Returns True if no items or children are present. '''
-        if len(self.children) == 0 == len(self.items):
-            return True
-        return False
-
-    def isLeaf(self):
-        ''' Returns whether the node is a leaf node or not '''
-        if len(self.children) == 0:
-            return True
-        return False
-
-    def size(self):
-        ''' Returns number of items in the node '''
-        return len(self.items)
-
-    def path(self, item):
-        ''' returns next node on path to item or successor, False if leaf'''
-        if self.isLeaf(): return False
-        for i in range(self.size()):
-            if item < self.items[i]: # return left child if item is smaller
-                return self.children[i]
-        return self.children[-1] # end reached: return last child
-        
-
 class Tree234:
     ''' Represents a 234 tree '''
+
+    # Node class for the nodes of the tree.
+    # items, children and parent can be passed in as arguments. The class will
+    # NOT check whether the right amount was passed in, so be careful not to
+    # create an invalid node!
+    class Node:
+        ''' represents a node in a 234 tree '''
+        def __init__(self, i1 = None, i2 = None, i3 = None,
+                    c1 = None, c2 = None, c3 = None, c4 = None, parent = None):
+            self.items = []
+            self.children = []
+            self.parent = parent
+            # loop through items and add them if present
+            for i in [i1, i2, i3]:
+                if i:
+                    self.items.append(i)
+            # loop through items and add them if present
+            for c in [c1, c2, c3, c4]:
+                if c:
+                    self.children.append(c)
+            self.items.sort() # Put items in order
+            self.children.sort() # Put children in order
+
+        def __lt__(self, node):
+            ''' Compare nodes -> compare first data item '''
+            if self.items[0] < node:
+                return True
+            return False
+
+        def __gt__(self, node):
+            ''' Compare nodes -> compare first data item '''
+            if self.items[0] > node:
+                return True
+            return False
+
+        def __eq__(self, node):
+            ''' Compare nodes -> compare first data item '''
+            if self.items[0] == node:
+                return True
+            return False
+
+        def contains(self, item):
+            ''' checks whether item is present in this node. returns boolean '''
+            for i in self.items:
+                if i == item:
+                    return True
+            return False
+
+        def addi(self, item):
+            ''' add an item to the node '''
+            self.items.append(item)
+            self.items.sort()
+
+        def remi(self, item):
+            ''' remove an item from the node '''
+            self.items.remove(item)
+            self.items.sort()
+
+        def addc(self, child):
+            ''' add a child to the node '''
+            self.children.append(child)
+            child.setParent(self)
+            self.children.sort()
+
+        def remc(self, child):
+            ''' remove a child from the node '''
+            self.children.remove(child)
+            self.children.sort()
+
+        def setParent(self, parent):
+            ''' set the parent of the node '''
+            self.parent = parent
+
+        def isEmpty(self):
+            ''' Returns True if no items or children are present. '''
+            if len(self.children) == 0 == len(self.items):
+                return True
+            return False
+
+        def isLeaf(self):
+            ''' Returns whether the node is a leaf node or not '''
+            if len(self.children) == 0:
+                return True
+            return False
+
+        def size(self):
+            ''' Returns number of items in the node '''
+            return len(self.items)
+
+        def path(self, item):
+            ''' returns next node on path to item or successor, False if leaf'''
+            if self.isLeaf(): return False
+            for i in range(self.size()):
+                if item < self.items[i]: # return left child if item is smaller
+                    return self.children[i]
+            return self.children[-1] # end reached: return last child
+            
+
+
     def __init__(self):
         ''' start with an empty root node '''
         self.node = Node()
