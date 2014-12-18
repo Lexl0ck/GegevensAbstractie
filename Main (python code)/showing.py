@@ -1,5 +1,5 @@
-from .ADT.stack import *
-from .Containers.ticket import *
+from stack import *
+from ticket import *
 
 class Showing:
 

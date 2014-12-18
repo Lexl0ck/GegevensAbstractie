@@ -1,10 +1,10 @@
 from binarytree import *
 from double_linked_chain import *
 
-from Advanced.hashmap import *
-from Advanced.redblack_tree import *
-from Advanced.tree_234 import *
-from Advanced.TwoThreeTree import * 
+from hashmap import *
+from redblack_tree import *
+from tree_234 import *
+from TwoThreeTree import * 
 
 
 class Table:

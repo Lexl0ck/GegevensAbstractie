@@ -1,5 +1,5 @@
 import math
-from .doubly_linked_chain import *
+from doubly_linked_chain import *
 
 
 class Hashmap:

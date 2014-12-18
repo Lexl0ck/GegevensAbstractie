@@ -1,10 +1,10 @@
-from Handlers.showing import *
-from Containers.screen import *
-from Containers.film import *
-from Containers.reservation import *
+from showing import *
+from screen import *
+from film import *
+from reservation import *
 
-from ADT.Table.table import *
-from ADT.queue import *
+from table import *
+from queue import *
 from datetime import time
 from datetime import date
 
