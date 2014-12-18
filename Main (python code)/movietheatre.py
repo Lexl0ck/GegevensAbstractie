@@ -116,19 +116,19 @@ class Movietheatre:
        return self.showing_table.traverseTable()
    
     def getShowing(self, showingID):
-       return showing_table.tableRetrieve(showingID)
+       return self.showing_table.tableRetrieve(showingID)
 
     def removeShowing(self, showingID):
-       return showing_table.tableDelete(showingID)
+       return self.showing_table.tableDelete(showingID)
 
     def listFilms(self):
-       return film_table.traverseTable()
+       return self.film_table.traverseTable()
 
     def getFilm(self, filmID):
-       return film_table.tableRetrieve(filmID)
+       return self.film_table.tableRetrieve(filmID)
 
     def removeFilm(self, filmID):
-       return film_table.tableDelete(filmID)
+       return self.film_table.tableDelete(filmID)
 
     def listUsers(self):
        return self.users
