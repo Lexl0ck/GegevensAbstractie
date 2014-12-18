@@ -10,10 +10,10 @@ class Screen:
     def setSeats(self, seats):
         self.seats = seats
 
-   def getScreenNumber(self):
+    def getScreenNumber(self):
         return self.screenNumber
 
-   def getSeats(self):
+    def getSeats(self):
         return self.seats
 
     def __eq__(self, other):
