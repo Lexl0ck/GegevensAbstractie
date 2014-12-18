@@ -1,0 +1,11 @@
+class Slot
+//implementatie door Felix
+--------------------------------------------------------------------------------
+-ID: integer //unique indentifier
+-time //time in minutes (will be converted to hours and minutes in the interface)
+--------------------------------------------------------------------------------
+
++setID(IN ID, OUT success) 
++setTime(IN Time, OUT success)
++getID(OUT ID) {query}
++getTime(OUT Time) {query}

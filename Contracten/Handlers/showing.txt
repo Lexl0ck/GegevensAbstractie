@@ -1,0 +1,47 @@
+class Showing
+// implementatie door Stein
+--------------------------------------------------------------------------------
+-ID: integer 
+//unique identifier
+
+-screenID: integer 
+//Points to the screen where the showing takes place
+
+-timeSlot 
+//Points to a time slot when the showing takes place
+
+-date
+
+-filmID: integer 
+//Points to the film that is shown
+
+-freeseats: integer=total number of seats at screen with Screen ID
+
+-tickets: stack=empty
+--------------------------------------------------------------------------------
+
++setID(IN ID, OUT success)
++setScreenID(IN:ScreenID, OUT success)
++setTimeSlot(IN timeslot, OUT success)
++setDate(IN date, OUT success)
++setFilmID(IN filmID, OUT success)
++getID(OUT ID)  {query}
++getScreen(OUT screenID) {query}
++getTimeSlot(OUT timeslot) {query}
++getDate(OUT date) {query}
++getFilm(OUT filmID) {query}
+
++reserve(IN number of tickets, OUT success):boolean
+//increases tickets by the given number and decreases Freeseats by the same 
+//amount.
+//Reservation will be disabled once the Showing has started (starting time
+//has passed and tickets queue is empty) 
+
++checkIn():boolean
+//Decreases the number of tickets by 1 indicating success
+//Checkin should only become available a set time before the showing starts.
+
++toString(OUT printable string of showing):string {query}
+//Return a printable version of the showing, containing all our parameters 
+
+

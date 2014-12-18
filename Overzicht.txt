@@ -1,0 +1,50 @@
+Current list of elements to implement (+ summary):
+
+    movietheatre -- Main class
+
+
+    Containers (Set & Get only)
+        Screen
+            Vars: screenNumber & seats  
+        Slot
+            Vars: ID, time 
+        Ticket
+            Vars: userID 
+        User
+            Vars: ID, firstName, lastName, email 
+        Reservation
+            Vars: ID, userID, timestamp, showingID, amount 
+        Film
+            Vars: ID, title, rating 
+
+
+    Handlers (Contains + Handles Data)
+        showing
+            Vars: ID, screenID, timeSlot, date, filmID, freeseats. tickets 
+            Handles reservations w/ stack (tickets) 
+
+
+    ADT's:
+        ADT Queue
+		Transforms Reservations into Tickets
+		Protection against many stack push operation at a time
+        ADT Stack
+		Per showing 1 stack
+		Push: Comes from ADT Queue
+		Pop: Person enters screen
+        ADT Table 
+		showing: 
+			Implementation: Double linked chain (SearchKey: ID) 
+			Outside ADT: Sort of choice w/ SearchKey : date, timeSlot, screenID
+
+		film:
+			Implementatation: Binary searchTree
+			+ Only inorder traversal (SearchKey: Rating)
+
+		Must also allow advanced implementations:
+			2-3 tree
+			2-3-4 tree
+			Red=black tree
+			Hashmap
+
+	

@@ -1,0 +1,116 @@
+Author: Felix Neijzen (20142369)
+Test code: Nico Beyers
+
+Operation contract Red-Black tree
+
+#######################################################################
+Class
+node
+#######################################################################
+-----------------------------------------------------------------------
+Attributes:
+-----------------------------------------------------------------------
+-Parent
+//pointer to the parent of the node
+
+-Leftchild
+//Pointer to the left child of the node
+
+-Rightchild
+//Pointer to the right child of the node
+
+-ParentPointerColor
+//Holds the color of the connection between the node and its parent
+
+-Leftchild
+//Holds the color of the connection between the node and its left child
+
+-Rightchild
+//Holds the color of the connection between the node and its right child
+
+------------------------------------------------------------------------
+Methods:
+------------------------------------------------------------------------
++create(out:success)
+//creates a new object of type Node
+//pre-conditions: a parent node or root pointer must exist
+//post-conditions: new object of type Node
+
++destroy(out:success)
+//destroys an object of type Node
+//pre-conditions: None
+//post-conditions: node doesn't exist anymore
+
++isLeaf(out:Boolean)
+//returns True if the node has no children, else returns False
+//pre-conditions: None
+//post-conditions: None
+
++getParent(out:Parent)
+//returns pointer to the parent of the node
+//pre-conditions: node is not the root
+//post-conditions: None
+
++getRightChild(out:RightChild)
+//returns pointer to the right child
+//pre-conditions: RightChild exists
+//post-conditions: None
+
++getLeftChild(out:LeftChild)
+//returns pointer to the left child
+//pre-conditions: LeftChild exists
+//post-conditions: None
+
+
+#######################################################################
+class
+RedBlackTree
+#######################################################################
+-----------------------------------------------------------------------
+attributes:
+-----------------------------------------------------------------------
+-rootpointer:
+//pointer that points towards the root of the tree
+
+-----------------------------------------------------------------------
+methods:
+-----------------------------------------------------------------------
++create(out:success)
+//creates new object of type RedBlackTree
+//pre-conditions: None
+//post-conditions: new object of type RedBlackTree
+
++destroy(out:success)
+//destroys the object
+//pre-conditions: None
+//post-conditions: object doesn't exist anymore
+
++insert(in value:itemType, in node:Node, out:success)
+//inserts a new value in a subtree of the tree
+//pre-conditions: None
+//post-conditions: None
+
++delete(in value:itemType, out:success)
+//deletes value from one of the subtrees of the tree
+//pre-conditions: subtree with root node should contain atleast one item
+//post-conditions: None
+
++search(in value:itemType, out:Boolean)
+//searches for a value in the tree and returns it if the value exists in the tree, else returns None
+//pre-conditions: None
+//post-conditions: None
+
++postOrderTraversal()
+//traverses the tree in post-order
+//pre-conditions: None
+//post-conditions: None
+
++preOrderTraversal()
+//traverses the tree in pre-order
+//pre-conditions: None
+//post-conditions: None
+
++inOrderTraversal()
+//traverses the tree in in-order
+//pre-conditions: None
+//post-conditions: None

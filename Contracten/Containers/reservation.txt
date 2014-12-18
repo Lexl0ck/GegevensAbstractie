@@ -1,0 +1,21 @@
+class Reservation
+// implementatie door Felix
+--------------------------------------------------------------------------------
+-ID: integer //unique identifier
+-userID: integer //Points to the ID of the user that made te reservation
+-timestamp //Time of reservation (current time when initialising object)
+-showingID: integer //Points to the ID of the showing the reservation is for
+-amount: integer //The amount of seats reserved
+--------------------------------------------------------------------------------
+
++setID(IN ID, OUT success)
++setUserID(IN userID, OUT success)
++setTimestamp(IN timestamp, OUT success)
++setShowingID(IN showingID, OUT success)
++SetAmount(IN amount, OUT success)
++getID(OUT ID) {query}
++getUserID(OUT userID) {query}
++getTimestamp(OUT timestamp) {query}
++getShowingID(OUT showingID) {query}
++getAmount(OUT amount) {query}
+

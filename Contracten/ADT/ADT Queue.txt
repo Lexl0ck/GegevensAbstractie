@@ -1,0 +1,27 @@
+class Queue
+// implementatie door Stein
+--------------------------------------------------------------------------------
+
++createQueue()
+
++destroyQueue()
+
++isEmpty(): boolean {query}
+
++enqueue(IN newItem:QueueItemType, out succes:boolean)
+// Voegt het element 'newItem' toe aan het eind (de staart) van de queue.
+// 'succes' duidt aan of het toevoegen gelukt is.
+
++dequeue(OUT succes: boolean)
+// Verwijderd de kop van de queue, d.i. het eerst toegevoegde element.
+// 'succes' duidt aan of het toevoegen gelukt is.
+
++dequeue(OUT queueFront:QueueItemType, out succes: boolean)
+// Plaatst de kop van een queue (d.i. het eerst toegevoegde element) in 
+// 'queueFront' en verwijderd dan deze kop.
+// 'succes' duidt aan of het toevoegen gelukt is. 
+
++getFront(OUT queueFront:QueueItemType, OUT succes: boolean) {query}
+// Plaatst de kop van een queue (d.i. het eerst toegevoegde element) in 
+// 'queueFront' en laat de queue ongewijzigd, 'succes' duidt aan of het gelukt is.
+

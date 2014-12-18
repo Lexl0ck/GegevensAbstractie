@@ -1,0 +1,24 @@
+class Stack
+// implementatie door Jeroen
+--------------------------------------------------------------------------------
+
++createStack()
++destroyStack()
++isEmpty(): boolean {query}
+
++push(IN newItem:StackItemType, OUT succes:boolean)
+// Voegt het element 'newItem' toe op de top van een stack
+// 'succes' duidt aan of het toevoegen gelukt is
+
++pop(OUT succes:boolean)
+// Verwijdert de top van een stack, d.i. het laatst toegevoegde element.
+// 'succes' duidt aan of het verwijderen gelukt is.
+
++pop(OUT stackTop:StackItemType, OUT succes:boolean)
+// Plaats de top van een stack (d.i. het laats toegevoegde element) in 
+// 'stackTop' en verwijdert dan deze top
+// 'succes' duidt aan of het verwijderen gelukt is
+
++getTop(OUT stackTop:StackItemType, OUT succes:boolean) {query}
+// Plaatst de top van een stack (d.i. het laatst toegevoegde element) in
+// 'stackTop' en laat de stack ongewijzigd. 'succes; dyudt aan of het gelukt is.

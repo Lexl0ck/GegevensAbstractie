@@ -1,0 +1,63 @@
+class Movietheatre
+// implementatie door Jeroen
+--------------------------------------------------------------------------------
+-screens 
+//A static list of the screens in our theatre
+
+-showings: table=empty 
+//Container for all our showings
+
+-slots 
+//A static list with the available time slots for movies
+
+-films: table=empty 
+//Container for the films we play
+
+-users: table=empty 
+//Container for our users (moviegoers)
+
+-reservations: table=empty 
+
+//Container for our reservations
+-reservationQueue: queue=empty 
+//Our queue for reservations
+//The ReservationQueue should be continuously checked. If it has items one
+//should be dequeued and added to Reservations. (can be simplified or done manually)
+--------------------------------------------------------------------------------
+
+//The following methods all create new objects with an ID. These ID's are
+//be unique, which means they don't occur in their respective lists.
+
++addFilm(IN filmID IN title, IN rating, OUT success)
+//Make an instance of the Film class and add it to Films
+
++addShowing(IN screenID, IN timeSlot, IN date, IN filmID, OUT success)
+//Make an instance of the Showing class and add it to Showings
+
++addUser(IN userID, IN firstName, IN lastName, IN email, OUT success)
+//Make an instance of the User class and add it Users
+
++makeReservation(IN reservationID, IN userID, IN showingID, IN amount, OUT success)
+//Make an instance of the Reservation class and place it in ReservationQueue.
+
+
+
++listShowings(OUT inorder traversal of Showings) {query}
+//Returns a list of our Showings
+
++getShowing(IN showingID, OUT showing) {query}
+//Search Showings for the given ID and return the showing or False
+
++removeShowing(IN showingID)boolean
+//Remove a showing From Showings. indicate success
+
++listFilms(OUT inoder traversal of Films) {query}
+//Returns a list of our Films
+
++getFilm(IN filmID, OUT film) {query}
+//Search Films for the given ID and return the film or False
+
+
+
+
+

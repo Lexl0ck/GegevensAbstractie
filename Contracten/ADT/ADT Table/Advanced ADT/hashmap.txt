@@ -1,0 +1,80 @@
+contract hashmap:
+
+
+class hashmap(in size, in probe_type ) out hashmap object:
+This class will create a new hashtable. 
+Parameters:
+'size': You have to specify the size that you wish for your hashmap. 
+        It doesn't have to be a prime number, the program will choose 
+        the next higher prime number to the given.
+'probingType': You can chose the type of collision probing by giving an integer between 0 and 2:
+                0: seperate chaining, the item where the collision happened will be turned in a 
+                   doubly linked chain holding the items every following item will be simply added 
+                   to the chain. All items containing only one item will be still in the 'item' 
+                   container format.
+                1: linear probing, when a collision occours the item will be placed in the next 
+                   free place checking in 1 tableplace steps. When removing in this system all 
+                   the following items in the line will be shifted left to close the gap.
+                2: quadratic probing, when a collision occours the item will be placed in the next
+                   free place checking in the hashkey of the square of the hashed position.
+                   when removing all the following items that belong to the same place will be shifted 
+                   to the posion of their predecessor.
+                default: seperate chaining.
+return: The class will return a hashmap object o the given size and probe type.
+dependencies: -doubly_linked_chain
+              -math
+
+
+method insert(in item, in searchkey):
+This method will insert an item to the table. If an collision occours it will be handled according to
+the probe type specified when creating the instance of the class.
+parameters: 'item': An item is everything you want to be stored.
+            'searchkey': The searchkey is an identifier to the item. The item will be found by comparing to this 
+             searchkey it can be of the datatype integer or string. Make shure that the searchkey is
+             unique or else the item may not be correctly found or removed afterwards.
+return: '-1': If the table is full and therefore no item can be added.
+precondition: The table may be empty or filled with a certain amount of items, if the table is 
+              completely full this method may not work. 
+postcondition: The table has one element more at the hased location according to the 'searchkey'.
+               The length is increased by one.
+
+method remove(in searchkey):
+This method will remove the item with the given searchkey from the hashtable. If linear or quadratic
+probing is chosen the produced gap will be filled by shifting the following items to the left.
+parameter: 'searchkey': The identifier for the item that will be removed given when inserting the 
+                        item it can be of the datatype integer or string. If the identifier isn't
+                        uniqe the wrong item may be removed.
+return: '-1': If the item is not in the table.
+precondition: The table may be filled with some items or full.
+postcondition: The table lost one item, the length is reduced by one.
+
+
+method getItem(in searchkey) out item:
+This method searches the table for the item of the specified searchkey.
+parameter : 'searchkey': The identifier of the item to be found. If the identifier is not unique a wrong 
+                         item may be returned. The 'searchkey' may be of the datatype integer or string.
+return: -The item with the specified searchkey.
+        -'-1' If no item is found.
+precondition: The table may be filled with some items or full.
+postcondition: Nothing is changed.
+
+
+method isEmpty()out bool:
+This method checks if the table is empty.
+parameter: None
+return: bool: If the the table is empty True will be returned or False otherwise.
+The method doesn't change the Table.
+
+
+method getTableSize() out int:
+The method checks the maximum size of the table.
+parameter: None
+return: int: the number of elements in the table including free and occupied places.
+The table isn't changed.
+
+
+method getLength() out int:
+This method checks how many occupied places are in the table.
+parameter: None
+return: int: The number of occupied items in the table.
+the table isn't changed.

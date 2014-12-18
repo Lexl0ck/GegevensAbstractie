@@ -1,0 +1,11 @@
+class Screen
+//implementatie door Felix
+--------------------------------------------------------------------------------
+-screenNumber: integer //unique identifier
+-seats: integer //Total number of seats 
+--------------------------------------------------------------------------------
+
+setScreenNumber(IN screennumber, OUT success)
+setSeats(IN seats, OUT success)
+getScreenNumber(OUT screennumber) {query}
+getSeats(OUT seats) {query}

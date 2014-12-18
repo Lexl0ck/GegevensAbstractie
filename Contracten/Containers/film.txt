@@ -1,0 +1,17 @@
+class Film
+// implementatie door Jeroen
+--------------------------------------------------------------------------------
+-ID: integer //unique identifier
+-title: string
+-rating: float
+--------------------------------------------------------------------------------
+
++setID(IN ID, OUT success)
++setTitle(IN title, OUT success)
++setRating(IN rating, OUT success) 
++getID(OUT ID) {query}
++getTitle(OUT title) {query}
++getRating(OUT rating) {query}
+
+
+

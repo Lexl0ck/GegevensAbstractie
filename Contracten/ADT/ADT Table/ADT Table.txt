@@ -1,0 +1,22 @@
+class Table
+// (voorlopige) implementatie met binary search tree van Stein
+--------------------------------------------------------------------------------
+
++createTable()
+
++destroyTable()
+
++isEmpty(): boolean {query}
+
++length(): integer {query}
+
++insert(IN newItem: TableItemType, OUT succes: boolean)
+// Voegt newItem toe aan een table met items met verschillende searchKey
+// waarden, verschillend van de search key van newItem. Succes geeft 
+// weer of het toevoegen gelukt is.
+
++delete(IN searchKey: KeyType, OUT succes: boolean)
+
++retrieve(IN searchkey: KeyType, OUT tableitem: TableItemType, OUT succes: boolean)
+
++traverse(IN visit: FunctionType)

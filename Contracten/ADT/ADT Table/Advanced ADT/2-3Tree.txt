@@ -1,0 +1,28 @@
+class TwoThreeTree
+// Implementatie door Jeroen
+-------------------------------------------------------------------------------------------
+
++create()
+# Creates a new TwoThreeTree.
+
++destroy(in tree: TwoThreeTree)
+# Destroys 'tree'.
+
++IsEmpty(in tree: TwoThreeTree) {query}
+# Returns True if 'tree' is empty, false otherwise.
+
++getLength(in tree: TwoThreeTree) {query}
+# Returns the length of 'tree'.
+
++insertItem(in tree: TwoThreeTree, in newItem: TreeItemType) boolean
+# Inserts 'newItem' in tree and returns True if succesfull.
+
++deleteItem(in tree: TwoThreeTree, in searchKey: KeyType, out succes:boolean) boolean
+# Deletes item with 'searchKey' from 'tree' and returns True if succesfull.
+
++retrieveItem(in tree: TwoThreeTree, in searchKey: KeyType, out treeItem: TreeItemType) boolean 
+# Retrieves the item with 'searchKey' from 'tree' and inserts it into treeItem, returns True 
+# if succesfull.
+
++inorder(in tree: TwoThreeTree)
+# Visits every node in 'tree' and prints puts its contents in an array.

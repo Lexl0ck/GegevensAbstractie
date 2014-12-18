@@ -1,0 +1,11 @@
+class Ticket
+//implementatie door Felix
+--------------------------------------------------------------------------------
+- userID: integer 
+
+setUserID(IN userID)
+getUserID(OUT userID) {query} 
+
+//Since we'll be treating tickets as generic objects on a stack this seems 
+//rather pointless right now, but may be useful for making extensions to the
+//program.

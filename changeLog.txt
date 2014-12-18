@@ -1,0 +1,20 @@
+Main
+=======
+Wrapper implemented
+Containers implemented
+
+
+
+ADT's
+======
+
+hashmap:
+Implemented a destroy(self)                                          - Jeroen
+Implemented a traverse(self)                                         - Jeroen
+
+Doubly linked chain:
+Implemented getItem(self, searchKey)                                 - Stein
+Traverse has been modified                                           - Stein
+
+
+

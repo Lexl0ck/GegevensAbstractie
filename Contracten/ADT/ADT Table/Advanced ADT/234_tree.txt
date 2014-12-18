@@ -1,0 +1,38 @@
+class 234-tree
+// Wordt geimplementeerd door: Stein de Groof.
+// Tests door Jeroen Verstraelen // Ik schrijf tests voor Nico
+// datastructuur 2-3-4 boom als implementatie voor het ADT table.
+// Dit contract kan rechtstreeks gemapt worden op het contract van de table
+// zodat het eenvoudig kan gebruikt worden.
+--------------------------------------------------------------------------------
+
++createTree()
+// Maak een lege boom aan
+
++destroyTree()
+// maakt de boom leeg. Object kan zichzelf niet verder destroyen in python
+
++isEmpty(): boolean {query}
+// True als de boom leeg is, anders False
+
++getHeight(): integer {query}
+// Geeft de huidige hoogte van de boom terug
+
++insert(IN newItem: ItemType, OUT succes: boolean)
+// Voegt nieuw item toe aan tree op de gepaste plaats volgens searchkey.
+// De searchkey wordt niet expliciet opgegeven; er wordt gesorteerd met het
+// toegevoegde item zelf. Op het toegevoegde item moeten dus de operators
+// <, > en == kunnen worden uitgevoerd. Succes geeft weer of het toevoegen
+// gelukt is.
+
++delete(IN searchKey: KeyType, OUT succes: boolean)
+// Verwijder een item uit de boom met behoud van de correctheid van de boom.
+
++retrieve(IN searchkey: KeyType, OUT item: ItemType, OUT succes: boolean)
+// Geef een searchkey in van een type dat vergeleken kan worden met de items
+// in de boom (met <, >, ==). Geeft het gevonden item terug indien aanwezig,
+// anders False
+
++traverse(IN visit: FunctionType)
+// Geef preorder, postorder of inorder als parameter, er zal een traverse
+// van dit type gedaan worden (default inorder)

@@ -1,0 +1,17 @@
+class User
+//implementatie door Felix
+--------------------------------------------------------------------------------
+-ID: integer //unique identifier
+-firstName: string
+-lastName: string
+-email: string
+--------------------------------------------------------------------------------
+
++setID(IN ID, OUT success)
++setFirstName(IN firstName, OUT success)
++setLastName(IN lastName, OUT success)
++setEmail(IN Email, OUT success)
++getID(OUT ID) {query}
++getFirstName(OUT firstName) {query}
++getLastName(OUT lastName) {query}
++getEmail(OUT email) {query}
