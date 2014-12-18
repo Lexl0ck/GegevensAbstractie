@@ -133,5 +133,5 @@ class Movietheatre:
     def listUsers(self):
        return users
 
-    def listReservations(self)
+    def listReservations(self):
        return film_table.traverseTable()
