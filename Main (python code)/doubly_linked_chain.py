@@ -99,8 +99,8 @@ class doubly_linked_chain:
         else:
             return False
 
-   def getLength(self):
-       return self.length
+    def getLength(self):
+        return self.length
 
     def isEmpty(self):
         ''' Returns True if the chain is empty or false if not. '''
