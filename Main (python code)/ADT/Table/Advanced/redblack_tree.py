@@ -1,75 +1,79 @@
-class redblacknode:            
-    '''
-    class for the node of a red-black tree
-    '''
-    def __init__(self,key):
-        self.key = key
-        self.red = False    #self.red holds the color of the connectino between the node and it's parent, and is initialized as black
-        self.leftchild = None
-        self.rightchild = None
-        self.parent = None
-    
-    def __str__(self):        #returns a string representation for a node
-        return str(self.key)
-    
-    def __repr__(self):
-        return str(self.key)
-
-    def create(self, key):        #initializes a node
-        self.__init__(key)
-
-    def destroy(self):        #destroys the node
-        del(self)
-
-    def isLeaf(self):        #returns True if the node is a leaf, otherwise returns False
-        if self.rightchild == None and self.leftchild == None:
-            return True
-        else:
-            return False
-
-    def getParent(self):        #returns the parent of the node
-        return self.parent
-
-    def getRightChild(self):    #returns the right child of the node
-        return self.rightchild
-    
-    def getLeftChild(self):        #returns the left child of the node
-        return self.leftchild
-    
-    def preOrderTraversal(self, node=None):    #traverses and prints the tree in preorder
-        ret_list = []
-        if None != node.key and node != None:
-            ret_list.append(node)
-        if node.leftchild != None:
-            ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
-        if node.rightchild != None:
-            ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
-        return ret_list
-
-    def postOrderTraversal(self, node=None):    #traverses and prints the tree in postorder
-        ret_list = []
-        if node.leftchild != None:
-            ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
-        if node.rightchild != None:
-            ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
-        if None != node.key and node != None:
-            ret_list.append(node)
-        return ret_list
-    
-    def inOrderTraversal(self, node=None):    #traverses and prints the tree in inorder
-        ret_list = []
-        if node.leftchild != None:
-            ret_list.extend(node.leftchild.inOrderTraversal(node.leftchild))
-        if None != node.key and node != None:
-            ret_list.append(node)
-        if node.rightchild != None:
-            ret_list.extend(node.rightchild.inOrderTraversal(node.rightchild))
-        return ret_list
-
 class Redblacktree:            
     '''
     class for the red-black tree
     '''
+
+        class redblacknode:            
+        '''
+        class for the node of a red-black tree
+        '''
+        def __init__(self,key):
+            self.key = key
+            self.red = False    #self.red holds the color of the connectino between the node and it's parent, and is initialized as black
+            self.leftchild = None
+            self.rightchild = None
+            self.parent = None
+        
+        def __str__(self):        #returns a string representation for a node
+            return str(self.key)
+        
+        def __repr__(self):
+            return str(self.key)
+    
+        def create(self, key):        #initializes a node
+            self.__init__(key)
+    
+        def destroy(self):        #destroys the node
+            del(self)
+    
+        def isLeaf(self):        #returns True if the node is a leaf, otherwise returns False
+            if self.rightchild == None and self.leftchild == None:
+                return True
+            else:
+                return False
+    
+        def getParent(self):        #returns the parent of the node
+            return self.parent
+    
+        def getRightChild(self):    #returns the right child of the node
+            return self.rightchild
+        
+        def getLeftChild(self):        #returns the left child of the node
+            return self.leftchild
+        
+        def preOrderTraversal(self, node=None):    #traverses and prints the tree in preorder
+            ret_list = []
+            if None != node.key and node != None:
+                ret_list.append(node)
+            if node.leftchild != None:
+                ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
+            if node.rightchild != None:
+                ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
+            return ret_list
+    
+        def postOrderTraversal(self, node=None):    #traverses and prints the tree in postorder
+            ret_list = []
+            if node.leftchild != None:
+                ret_list.extend(node.leftchild.postOrderTraversal(node.leftchild))
+            if node.rightchild != None:
+                ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
+            if None != node.key and node != None:
+                ret_list.append(node)
+            return ret_list
+        
+        def inOrderTraversal(self, node=None):    #traverses and prints the tree in inorder
+            ret_list = []
+            if node.leftchild != None:
+                ret_list.extend(node.leftchild.inOrderTraversal(node.leftchild))
+            if None != node.key and node != None:
+                ret_list.append(node)
+            if node.rightchild != None:
+                ret_list.extend(node.rightchild.inOrderTraversal(node.rightchild))
+            return ret_list
+    
+
+
+
     def __init__(self):
         self.dummy = redblacknode(None)#dummy node
         self.root = self.dummy    #upon initialisation of a tree, the dummy serves as the root
