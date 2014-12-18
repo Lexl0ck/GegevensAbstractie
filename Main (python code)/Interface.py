@@ -68,8 +68,7 @@ def checkin():
     answer = "y"
     print("Now checking in for showing with ID: ",showingID)
     while answer == "y":
-        answer = input("type 'y' to check in a viewer, any other key
-                        to stop checking in")
+        answer = input("type 'y' to check in a viewer, any other key to stop checking in")
         theatre.checkin(showingID)
 
 def reservationmenu():
