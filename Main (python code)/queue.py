@@ -26,6 +26,10 @@ class Queue:
         self.front = front
         self.tail = front
 
+    def createQueue(self):
+        ''' does nothing, included for consistency '''
+        pass
+
     def __str__(self):
         ''' Returns the current items in the queue formatted as a list '''
         pointer = self.front
