@@ -132,7 +132,7 @@ class Tree234:
     def getLength(self):
         list = self.traverse()
         length = len(self.traverse())
-        if length == 1 and list[0].items = [None, None, None]:
+        if length == 1 and list[0].items == [None, None, None]:
             return 0
         return length
 

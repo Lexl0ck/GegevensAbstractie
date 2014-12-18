@@ -3,7 +3,7 @@ class Redblacktree:
     class for the red-black tree
     '''
 
-        class redblacknode:            
+    class redblacknode:            
         '''
         class for the node of a red-black tree
         '''
@@ -31,16 +31,16 @@ class Redblacktree:
                 return True
             else:
                 return False
-    
+     
         def getParent(self):        #returns the parent of the node
             return self.parent
-    
+     
         def getRightChild(self):    #returns the right child of the node
             return self.rightchild
-        
+            
         def getLeftChild(self):        #returns the left child of the node
             return self.leftchild
-        
+            
         def preOrderTraversal(self, node=None):    #traverses and prints the tree in preorder
             ret_list = []
             if None != node.key and node != None:
@@ -50,7 +50,7 @@ class Redblacktree:
             if node.rightchild != None:
                 ret_list.extend(node.rightchild.postOrderTraversal(node.rightchild))
             return ret_list
-    
+        
         def postOrderTraversal(self, node=None):    #traverses and prints the tree in postorder
             ret_list = []
             if node.leftchild != None:
@@ -60,7 +60,7 @@ class Redblacktree:
             if None != node.key and node != None:
                 ret_list.append(node)
             return ret_list
-        
+           
         def inOrderTraversal(self, node=None):    #traverses and prints the tree in inorder
             ret_list = []
             if node.leftchild != None:
@@ -70,9 +70,7 @@ class Redblacktree:
             if node.rightchild != None:
                 ret_list.extend(node.rightchild.inOrderTraversal(node.rightchild))
             return ret_list
-    
-
-
+     
 
     def __init__(self):
         self.dummy = redblacknode(None)#dummy node
