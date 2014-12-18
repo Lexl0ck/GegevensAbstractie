@@ -262,7 +262,7 @@ class Hashmap:
         while i < self.getTableSize():
             if not self.__table[self.__h(i)] == None:
                 ret_list.append(self.__table[self.__h(i)].searchKey)
-            ret_list.append(self.rec_quadtraverse(i**2)
+            ret_list.append(self.rec_quadtraverse(i**2))
         return ret_list
 
     def rec_quadtraverse(self, j):
