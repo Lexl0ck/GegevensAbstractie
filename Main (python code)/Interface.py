@@ -119,8 +119,7 @@ def mainmenu():
             filmsmenu()
         elif int(choice) == 4:
             return 0
-        
-
 
 # Call our main menu to get the ball rolling
 mainmenu()
+       
