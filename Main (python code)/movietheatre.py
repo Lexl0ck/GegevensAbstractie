@@ -78,7 +78,7 @@ class Movietheatre:
         user.setFirstName(firstname)
         user.setLastName(lastname)
         user.setEmail(email)
-        users.append(user)
+        self.users.append(user)
           
     def addFilm(self, filmID, title, rating):
         film = Film()
