@@ -58,7 +58,6 @@ class Showing:
                     return empty_ts
                 return dt
             return -1
-            
 
     def reserve(self, ticket_am):
         if not self.date == None and not self.time == None:

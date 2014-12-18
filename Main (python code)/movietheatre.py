@@ -35,10 +35,10 @@ class Movietheatre:
         s1 = self.addScreen(0, 200)
         s2 = self.addScreen(1, 150)
  
-        sl1 = self.init_slot(0, datetime.time(14,30))  # 14:30
-        sl2 = self.init_slot(1, datetime.time(17))  # 17:00
-        sl3 = self.init_slot(2, datetime.time(20))  # 20:00
-        sl4 = self.init_slot(3, datetime.time(21,30)) # 22:30   
+        sl1 = self.addslot(0, datetime.time(14,30))  # 14:30
+        sl2 = self.addslot(1, datetime.time(17))  # 17:00
+        sl3 = self.addslot(2, datetime.time(20))  # 20:00
+        sl4 = self.addslot(3, datetime.time(21,30)) # 22:30   
 
 
         f1 = self.addFilm(0, "Bloody Mary", 6.75)
