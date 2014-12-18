@@ -3,7 +3,7 @@ from screen import *
 from film import *
 from reservation import *
 from slot import *
-fron user import *
+from user import *
 
 from table import *
 from queue import *
