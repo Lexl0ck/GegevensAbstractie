@@ -27,19 +27,19 @@ class Film:
         return self.rating
 
     def __eq__(self, other):
-        return self.rating == other.rating
+        return self.ID == other
  
     def __ne__(self, other):
-        return not self.rating == other.rating
+        return not self.ID == other
 
     def __lt__(self, other):
-        return self.rating < other.rating
+        return self.ID < other
 
     def __le__(self, other):
-        return self.rating <= other.rating
+        return self.ID <= other
 
     def __gt__(self, other):
-        return self.rating > other.rating
+        return self.ID > other
    
     def __ge__(self, other):
-        return self.rating >= other.rating
+        return self.ID >= other

@@ -100,12 +100,12 @@ class Movietheatre:
 
     def makeReservation(self, reservationID, userID, showingID, amount):
         reservation = Reservation()
-        reservation.setId(reservationID)
-        reservation.setTimestamp(datetime.datetime.now())
+        reservation.setID(reservationID)
+        reservation.setTimestamp(datetime.now())
         reservation.setShowingID(showingID)
         reservation.setAmount(amount)
         self.reservationQueue.enqueue(reservation)
-        pr_res = self.reservationQueue.dequeue(reservation)
+        pr_res = self.reservationQueue.dequeue()
         showing = self.getShowing(showingID)
         self.reservation_table.tableInsert(reservation)
         if showing.getFreeSeats() - amount > 0:

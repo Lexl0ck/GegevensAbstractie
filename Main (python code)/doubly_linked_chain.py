@@ -93,11 +93,13 @@ class Doubly_linked_chain:
 
     def getItem(self, searchKey):
         ''' Returns the first item found with the given searchkey. '''
-        node = self.getNode(searchKey)
-        if node:
-            return node.item
-        else:
-            return False
+        tmpNode = self.headPtr
+        tmpNode = tmpNode.next #skip the dummy head node
+        while tmpNode != None:
+            if tmpNode.searchKey == searchKey:
+                return tmpNode.searchKey
+            tmpNode = tmpNode.next
+        return False
 
     def getLength(self):
         return self.length

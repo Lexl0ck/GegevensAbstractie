@@ -17,19 +17,19 @@ class Slot:
         return self.time
 
     def __eq__(self, other):
-        return self.ID == other.ID
+        return self.ID == other
  
     def __ne__(self, other):
-        return not self.ID == other.ID
+        return not self.ID == other
 
     def __lt__(self, other):
-        return self.ID < other.ID
+        return self.ID < other
 
     def __le__(self, other):
-        return self.ID <= other.ID
+        return self.ID <= other
 
     def __gt__(self, other):
-        return self.ID > other.ID
+        return self.ID > other
    
     def __ge__(self, other):
-        return self.ID >= other.ID
+        return self.ID >= other

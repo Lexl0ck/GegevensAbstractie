@@ -14,7 +14,7 @@ class Showing:
         self.tickets = Stack()
         self.tickets.createStack()
         self.empty_ts = datetime.now()
- 
+
     def setID(self, ID):
         self.ID = ID
 
@@ -52,7 +52,7 @@ class Showing:
         return self.freeseats
 
     def isStarted(self):
-        if not self.date == None and not self.time == None:
+        if not self.date == None and not self.timeSlot == None:
             dt = datetime.datetime.combine(self.date, timeSlot.getTime)
             if dt <= datetime.datetime.now():
                 if empty_ts > dt:
@@ -61,7 +61,7 @@ class Showing:
             return -1
 
     def reserve(self, ticket_am):
-        if not self.date == None and not self.time == None:
+        if not self.date == None and not self.timeSlot == None:
             dt = datetime.datetime.combine(self.date, timeSlot.getTime)
             if datetime.datetime.now() < dt:
                 for i in range(ticket_am):
@@ -73,7 +73,7 @@ class Showing:
         return False 
        
     def checkIn(self):
-        if not self.date == None and not self.time == None:
+        if not self.date == None and not self.timeSlot == None:
             dt = datetime.datetime.combine(self.date, timeSlot.getTime)
             if dt < datetime.datetime.now() :
                 if self.tickets.pop():
@@ -88,4 +88,20 @@ class Showing:
                 "\n FilmID: "+str(self.getFilmID())+ "\n FreeSeats: "+str(self.getFreeSeats()))
 
 
+    def __eq__(self, other):
+        return self.ID == other
  
+    def __ne__(self, other):
+        return not self.ID == other
+
+    def __lt__(self, other):
+        return self.ID < other
+
+    def __le__(self, other):
+        return self.ID <= other
+
+    def __gt__(self, other):
+        return self.ID > other
+   
+    def __ge__(self, other):
+        return self.ID >= other

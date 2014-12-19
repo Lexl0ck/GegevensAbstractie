@@ -32,3 +32,21 @@ class User:
 
     def getEmail(self):
         return self.email
+
+    def __eq__(self, other):
+        return self.ID == other
+ 
+    def __ne__(self, other):
+        return not self.ID == other
+
+    def __lt__(self, other):
+        return self.ID < other
+
+    def __le__(self, other):
+        return self.ID <= other
+
+    def __gt__(self, other):
+        return self.ID > other
+   
+    def __ge__(self, other):
+        return self.ID >= other
