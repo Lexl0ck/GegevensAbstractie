@@ -106,4 +106,36 @@ class Table:
         elif self.implementation == "23Tree":
             return self.pointer.traverse()
 
+    def sortObjectList(self, olist, getter):
+        ''' this function takes lists of objects and getter methodes to sort the
+            objects by different properties '''
+        def quicksort(lst):
+            if len(lst) < 2:
+                return lst
+            pivotindex = int((len(lst) - 1)/2)
+            newpivotindex = int((len(lst) - 1)/2)
+            pivot = lst[pivotindex]
+            for i in range(pivotindex - 1, -1, -1):
+                if lst[i] >= pivot:
+                    lst.insert(newpivotindex, lst.pop(i))
+                    newpivotindex -= 1
+            for i in range(pivotindex + 1, len(lst)):
+                if lst[i] <= pivot:
+                    lst.insert(newpivotindex, lst.pop(i))
+                    newpivotindex += 1
+            leftlist = quicksort(lst[0:newpivotindex])
+            leftlist.append(pivot)
+            rightlist = quicksort(lst[newpivotindex + 1:len(lst)])
+            lst = leftlist + rightlist
+            return lst
+        templist = []
+        for obj in olist:
+            templist.append((getter(obj), obj))
+        sortedlist = quicksort(templist)
+        resultlist = []
+        for item in sortedlist:
+            resultlist.append(item[1])
+        return resultlist
+    
+        
 

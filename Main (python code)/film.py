@@ -5,6 +5,9 @@ class Film:
         self.title = ""
         self.rating = 0.00
    
+    def __str__(self):
+        return str(self.ID) + " " + str(self.title) + " " + str(self.rating)
+   
     def setID(self, ID):
         self.ID = ID
 
