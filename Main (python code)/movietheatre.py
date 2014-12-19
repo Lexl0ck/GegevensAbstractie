@@ -143,6 +143,6 @@ class Movietheatre:
     def listReservations(self):
        return self.film_table.traverseTable()
 	   
-	def getTickets(self, showingID):
-	   return self.getShowing(showingID).getTickets()
+    def getTickets(self, showingID):
+       return self.getShowing(showingID).getTickets()
 	

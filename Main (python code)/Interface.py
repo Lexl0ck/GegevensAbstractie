@@ -55,10 +55,13 @@ def create_showing():
     print("** adding a new showing ***********")
     screenID = input("Please enter the screenID: ")
     timeslot = input("Please choose the timeslot: ")
-    date = input("Please enter the date: ")
     filmID = input("Please enter the filmID: ")
+    day = input("Please enter the day of the month: ")
+    month = input("Please enter the month (numeric): ")
+    year = input("Please enter the year: ")
+    date1 = date(int(year), int(month), int(day))
     showingID = len(theatre.listShowings())
-    if theatre.addShowing(showingID, screenID, timeslot, date, filmID):
+    if theatre.addShowing(int(showingID), screenID, timeslot, date1, filmID):
         print("Showing added. press enter to return")
     else:
         print("Couldn't add showing. press enter to return")
@@ -69,8 +72,10 @@ def checkin():
     print("** checking in ********************")
     showingID = int(input("Please input the showing ID "))
     answer = "y"
-    print("Now checking in for showing with ID: ",showingID)
     while answer == "y":
+        clear()
+        print("Now checking in for showing with ID: ",showingID)
+        print(" there are ", getTickets(showingID), "tickets still not checked in.\n")
         answer = input("type 'y' to check in a viewer, any other key to stop checking in: ")
         theatre.checkIn(showingID)
 
