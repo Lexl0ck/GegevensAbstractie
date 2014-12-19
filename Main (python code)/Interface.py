@@ -67,7 +67,7 @@ def create_showing():
 def checkin():
     ''' get a showing ID and check in viewers for that showing '''
     print("** checking in ********************")
-    showingID = input("Please input the showing ID ")
+    showingID = int(input("Please input the showing ID "))
     answer = "y"
     print("Now checking in for showing with ID: ",showingID)
     while answer == "y":
