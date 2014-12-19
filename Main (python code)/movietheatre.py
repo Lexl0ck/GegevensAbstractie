@@ -115,7 +115,10 @@ class Movietheatre:
         if showing.getFreeSeats() - amount > 0:
             return showing.reserve(amount)
         return False
-
+		
+    def checkIn(self, showingID):
+	    self.getShowing(showingID).checkIn()
+	
     def listShowings(self):
        return self.showing_table.traverseTable()
    

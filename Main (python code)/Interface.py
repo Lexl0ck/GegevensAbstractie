@@ -67,12 +67,12 @@ def create_showing():
 def checkin():
     ''' get a showing ID and check in viewers for that showing '''
     print("** checking in ********************")
-    showingID = input("Please input the showing ID")
+    showingID = input("Please input the showing ID ")
     answer = "y"
     print("Now checking in for showing with ID: ",showingID)
     while answer == "y":
-        answer = input("type 'y' to check in a viewer, any other key to stop checking in")
-        theatre.checkin(showingID)
+        answer = input("type 'y' to check in a viewer, any other key to stop checking in: ")
+        theatre.checkIn(showingID)
 
 def reservationmenu():
     ''' shows reservation menu, executes chozen input '''
@@ -83,6 +83,7 @@ def reservationmenu():
         print(" 0. Return to main menu")
         print(" 1. Reserve for existing userID")
         print(" 2. Reserve for new user")
+        print(" 3. List users")
         choice = input("\n> ")
         if int(choice) == 0: return True
         elif int(choice) == 1:
@@ -90,6 +91,15 @@ def reservationmenu():
         elif int(choice) == 2:
             create_user()
             create_reservation()
+        elif int(choice) == 3:
+            if len(theatre.listUsers()) == 0:
+                print("No users available.")
+            else:
+                for user in theatre.listUsers():
+                    print(user)
+            input("\nPress enter to continue")
+
+
 
 def filmsmenu():
     ''' shows films menu, executes chozen input '''
