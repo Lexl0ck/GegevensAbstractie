@@ -139,18 +139,19 @@ class BinTree:
         node = Node(searchkey, data)
         if self.isEmpty():
             self.root = node 
-        if self.root.getKey() == searchkey:
+        elif self.root.getKey() == searchkey:
             return False
-        if self.root > searchkey:
+        elif self.root > searchkey:
             if self.lefttree == None:
                 self.lefttree = BinTree(node)
             else:
                 self.lefttree.insert(searchkey, data)
-        if self.root < searchkey:
+        elif self.root < searchkey:
             if self.righttree == None:
                 self.righttree = BinTree(node)
             else:
                 self.righttree.insert(searchkey, data)
+        return True
 
     def remove(self, searchkey):
         """ Removes the node with the given searchkey. """

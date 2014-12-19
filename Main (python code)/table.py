@@ -61,8 +61,11 @@ class Table:
     def tableInsert(self, newItem):
         if (self.implementation == "doublylinkedchain" or
             self.implementation == "hashmap"):
-            return self.pointer.insert(None, newItem)
-        return self.pointer.insert(newItem)
+            if self.pointer.insert(None, newItem):
+                return True
+        if self.pointer.insert(newItem):
+            return True
+        return False
 
     def tableDelete(self, searchKey):
         if self.implementation == "binaryTree":

@@ -53,8 +53,8 @@ class Showing:
 
     def isStarted(self):
         if not self.date == None and not self.timeSlot == None:
-            dt = datetime.datetime.combine(self.date, timeSlot.getTime)
-            if dt <= datetime.datetime.now():
+            dt = datetime.combine(self.date, timeSlot.getTime)
+            if dt <= datetime.now():
                 if empty_ts > dt:
                     return empty_ts
                 return dt
@@ -62,23 +62,23 @@ class Showing:
 
     def reserve(self, ticket_am):
         if not self.date == None and not self.timeSlot == None:
-            dt = datetime.datetime.combine(self.date, timeSlot.getTime)
-            if datetime.datetime.now() < dt:
+            dt = datetime.combine(self.date, self.timeSlot.getTime())
+            if datetime.now() < dt:
                 for i in range(ticket_am):
                     ticket = Ticket()
                     if not self.tickets.push(ticket):
                        return False
-                    self.freaseats -= 1
+                    self.freeseats -= 1
                 return True   
         return False 
        
     def checkIn(self):
         if not self.date == None and not self.timeSlot == None:
-            dt = datetime.datetime.combine(self.date, timeSlot.getTime)
-            if dt < datetime.datetime.now() :
+            dt = datetime.combine(self.date, timeSlot.getTime)
+            if dt < datetime.now() :
                 if self.tickets.pop():
                     if self.tickets.isEmpty():
-                        self.empty_ts = datetime.datetime.now()
+                        self.empty_ts = datetime.now()
                     return True
         return False
         

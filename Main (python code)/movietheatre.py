@@ -50,13 +50,13 @@ class Movietheatre:
         f4 = self.addFilm(4, "V for vendetta", 9.85)
 
         self.addShowing(0, self.screens[0].getScreenNumber(), 
-        self.slots[2], date(2014,12,25), f2.getID(), self.screens[0].getSeats())
+        self.slots[2], date(2014,12,25), f2.getID())
 
         self.addShowing(1, self.screens[1].getScreenNumber(), 
-        self.slots[3], date(2014,12,25), f1.getID(), self.screens[1].getSeats())
+        self.slots[3], date(2014,12,25), f1.getID())
 
         self.addShowing(2, self.screens[1].getScreenNumber(), 
-        self.slots[3], date(2014,12,26), f4.getID(), self.screens[1].getSeats())
+        self.slots[3], date(2014,12,26), f4.getID())
 
     def addScreen(self, screennumber, seats):
         screen = Screen()
@@ -85,18 +85,22 @@ class Movietheatre:
         film.setID(filmID)
         film.setTitle(title)
         film.setRating(rating)
-        self.film_table.tableInsert(film)
-        return film
+        if self.film_table.tableInsert(film):
+            return film
+        return False
 
-    def addShowing(self, showID, screenID, timeSlot, date, filmID, freeseats):
+    def addShowing(self, showID, screenID, timeSlot, date, filmID):
         showing = Showing()
         showing.setID(showID)
         showing.setScreenID(screenID)
         showing.setTimeSlot(timeSlot)
         showing.setDate(date)
         showing.setFilmID(filmID)
-        showing.setFreeSeats(freeseats)
-        self.showing_table.tableInsert(showing)
+        screen = self.screens[int(screenID)]
+        showing.setFreeSeats(screen.getSeats())
+        if self.showing_table.tableInsert(showing):
+            return True
+        return False
 
     def makeReservation(self, reservationID, userID, showingID, amount):
         reservation = Reservation()
