@@ -33,6 +33,7 @@ class Doubly_linked_chain:
         dummyHeadNode.next = newNode
         nextNode.prev = newNode
         self.length +=1
+        return True
 
 
     def remove(self,searchKey):
@@ -93,18 +94,3 @@ class Doubly_linked_chain:
             tmpNode = tmpNode.next
         return tmpList
 
-
-test = Doubly_linked_chain()
-print(test.isEmpty())
-test.insert(1)
-print(test.isEmpty())
-
-test.insert(2)
-test.insert(6)
-print(test.getNode(6))
-test.remove(2)
-print(test.getNode(6))
-print(test.getNode(2))
-print(test.getItem(6))
-print(test.getItem(2))
-print(test.traverse())
