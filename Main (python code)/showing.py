@@ -50,6 +50,9 @@ class Showing:
 
     def getFreeSeats(self):
         return self.freeseats
+		
+    def getTickets(self):
+	    return len(self.tickets)
 
     def isStarted(self):
         if not self.date == None and not self.timeSlot == None:
