@@ -28,7 +28,7 @@ class Doubly_linked_chain:
         dummyHeadNode = self.headPtr
         nextNode = dummyHeadNode.next
         if searchkey == None:
-            return false
+            return False
         newNode = self.node(dummyHeadNode, dummyHeadNode.next, searchkey, item)
         dummyHeadNode.next = newNode
         nextNode.prev = newNode
