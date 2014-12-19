@@ -63,6 +63,10 @@ class Table:
             self.implementation == "hashmap"):
             if self.pointer.insert(None, newItem):
                 return True
+        if self.implementation == "23Tree":
+            if self.pointer.insertItem(newItem):
+                return True
+            return False
         if self.pointer.insert(newItem):
             return True
         return False

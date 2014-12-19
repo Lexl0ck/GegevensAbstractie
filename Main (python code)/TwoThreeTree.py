@@ -125,10 +125,10 @@ class TwoThreeTree:
             self.vals = [None, small, None]
     
             n1 = self
-            n2 = Node(self.tree, [None, large, None])
+            n2 = TwoThreeTree.Node(self.tree, [None, large, None])
     
             if self.parent == None:					# If self has no parent.
-                p = Node(self.tree, [None, None, None], None, [n1, None, None, n2])
+                p = TwoThreeTree.Node(self.tree, [None, None, None], None, [n1, None, None, n2])
             else:							# If self has a parent.
                 p = self.parent
                 if p.getSize() == 1:
@@ -398,7 +398,7 @@ class TwoThreeTree:
                     self.links[3] = sib_children[0]   
  
     def __init__(self):
-        self.root = Node(self)
+        self.root = TwoThreeTree.Node(self)
         self.height = 1
 
     def createTree(self):
