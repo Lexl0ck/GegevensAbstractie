@@ -15,9 +15,6 @@ class Showing:
         self.tickets.createStack()
         self.empty_ts = datetime.now()
  
-    def __str__(self):
-        return str(self.ID) + ". filmID: " + str(self.filmID) + " " + str(self.date) + " " + str(self.timeslot) + " screen: " + str(self.screenID)
-
     def setID(self, ID):
         self.ID = ID
 
