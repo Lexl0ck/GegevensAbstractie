@@ -14,6 +14,9 @@ class Showing:
         self.tickets = Stack()
         self.tickets.createStack()
         self.empty_ts = datetime.now()
+ 
+    def __str__(self):
+        return str(self.ID) + ". filmID: " + str(self.filmID) + " " + str(self.date) + " " + str(self.timeslot) + " screen: " + str(self.screenID)
 
     def setID(self, ID):
         self.ID = ID
@@ -84,7 +87,7 @@ class Showing:
         
 
     def __str__(self):
-        return ("The variables of Showing: \n ID: "+str(self.getID())+"\n ScreenID: "+str(self.getScreenID())+ "\n TimeSlot: "+str(self.getTimeSlot())+ "\n Date: "+str(self.getDate())+
+        return ("ID: "+str(self.getID())+"\n ScreenID: "+str(self.getScreenID())+ "\n TimeSlot: "+str(self.getTimeSlot())+ "\n Date: "+str(self.getDate())+
                 "\n FilmID: "+str(self.getFilmID())+ "\n FreeSeats: "+str(self.getFreeSeats()))
 
 

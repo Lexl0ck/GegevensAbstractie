@@ -6,6 +6,9 @@ class User:
         self.lastname = "None"
         self.email = "None"
 
+    def __str__(self):
+        return str(self.ID) + " " + str(self.firstname) + " " + str(self.lastname) + " " + str(self.email)
+
     def setID(self, ID):
         self.ID = ID
 

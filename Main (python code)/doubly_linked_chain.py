@@ -113,8 +113,8 @@ class Doubly_linked_chain:
         tmpList = []
         tmpNode = self.headPtr
         tmpNode = tmpNode.next #skip the dummy head node
-        while tmpNode != None and tmpNode.item != None:
-            tmpList.append(tmpNode.item)
+        while tmpNode != None:
+            tmpList.append(tmpNode.searchKey)
             tmpNode = tmpNode.next
         return tmpList
 

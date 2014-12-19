@@ -21,9 +21,9 @@ def create_reservation():
     amount = int(input("How many tickets would you like? "))
     reservationID = len(theatre.listReservations())
     if theatre.makeReservation(reservationID, userID, showingID, amount):
-        print("reservation made. press any key to return")
+        print("reservation made. press enter to return")
     else:
-        print("reservation failed. press any key to return")
+        print("reservation failed. press enter to return")
     input("")
 
 def create_user():
@@ -35,7 +35,7 @@ def create_user():
     userID = len(theatre.listUsers())
     theatre.addUser(userID, firstname, lastname, email)
     print("User created. Your userID is "+str(userID))
-    print("Press any key to return")
+    print("Press enter to return")
     input("")
 
 def create_film():
@@ -45,9 +45,9 @@ def create_film():
     rating = input("Please enter a rating: ")
     filmID = len(theatre.listFilms())
     if theatre.addFilm(filmID, title, rating):
-        print("Film Added. press any key to return")
+        print("Film Added. press enter to return")
     else:
-        print("Couldn't add film. press any key to return")
+        print("Couldn't add film. press enter to return")
     input("")
 
 def create_showing():
@@ -59,9 +59,9 @@ def create_showing():
     filmID = input("Please enter the filmID: ")
     showingID = len(theatre.listShowings())
     if theatre.addShowing(showingID, screenID, timeslot, date, filmID):
-        print("Showing added. press any key to return")
+        print("Showing added. press enter to return")
     else:
-        print("Couldn't add showing. press any key to return")
+        print("Couldn't add showing. press enter to return")
     input("")
 
 def checkin():
@@ -107,7 +107,7 @@ def filmsmenu():
         elif int(choice) == 2:
             for film in theatre.listFilms():
                 print(film)
-            input("Press any key to continue")
+            input("\nPress enter to continue")
 
 def showingsmenu():
     ''' prints showing menu, executes chozen input '''
@@ -126,7 +126,7 @@ def showingsmenu():
         elif int(choice) == 2:
             for showing in theatre.listShowings():
                 print(showing)
-            input("Press any key to continue")
+            input("\nPress enter to continue")
         elif int(choice) == 3:
             checkin()
 
