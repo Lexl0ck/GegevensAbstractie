@@ -117,7 +117,7 @@ class Movietheatre:
         return False
 		
     def checkIn(self, showingID):
-	    self.getShowing(showingID).checkIn()
+	    return self.getShowing(showingID).checkIn()
 	
     def listShowings(self):
        return self.showing_table.traverseTable()

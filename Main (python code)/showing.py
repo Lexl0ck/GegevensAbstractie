@@ -74,12 +74,10 @@ class Showing:
        
     def checkIn(self):
         if not self.date == None and not self.timeSlot == None:
-            dt = datetime.combine(self.date, self.timeSlot.getTime())
-            if dt < datetime.now() :
-                if self.tickets.pop():
-                    if self.tickets.isEmpty():
-                        self.empty_ts = datetime.now()
-                    return True
+            if self.tickets.pop():
+                if self.tickets.isEmpty():
+                    self.empty_ts = datetime.now()
+                return True
         return False
         
 
