@@ -22,7 +22,7 @@ class Table:
         elif self.implementation == "doublylinkedchain":
             self.pointer = Doubly_linked_chain()
         elif self.implementation == "hashmap":
-            self.pointer = Hashmap()
+            self.pointer = Hashmap(10000)
         elif self.implementation == "redBlackTree":
             self.pointer = Redblacktree()
         elif self.implementation == "234Tree":
