@@ -84,7 +84,7 @@ class Showing:
         
 
     def __str__(self):
-        return ("ID: "+str(self.getID())+"\n ScreenID: "+str(self.getScreenID())+ "\n TimeSlot: "+str(self.getTimeSlot())+ "\n Date: "+str(self.getDate())+
+        return ("ID: "+str(self.getID())+"\n ScreenID: "+str(self.getScreenID())+ "\n TimeSlot: "+str(self.getTimeSlot().getTime())+ "\n Date: "+str(self.getDate())+
                 "\n FilmID: "+str(self.getFilmID())+ "\n FreeSeats: "+str(self.getFreeSeats()))
 
 
