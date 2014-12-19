@@ -98,15 +98,9 @@ class Table:
     def traverseTable(self):
         if self.implementation == "binaryTree":
             return self.pointer.inorder()
-        elif self.implementation == "doublylinkedchain":
-            return self.pointer.getTraverse()
-        elif self.implementation == "hashmap":
-            return self.pointer.traverse()
         elif self.implementation == "redBlackTree":
             return self.pointer.inOrderTraversal()
-        elif self.implementation == "234Tree":
-            return self.pointer.traverse()
-        elif self.implementation == "23Tree":
+        else:
             return self.pointer.traverse()
 
     def sortObjectList(self, olist, getter):
