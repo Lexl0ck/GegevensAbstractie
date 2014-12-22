@@ -61,7 +61,7 @@ class Table:
     def tableInsert(self, newItem):
         if (self.implementation == "doublylinkedchain" or
             self.implementation == "hashmap"):
-            if self.pointer.insert(None, newItem):
+            if self.pointer.insert(newItem, newItem):
                 return True
         if self.implementation == "23Tree":
             if self.pointer.insertItem(newItem):
